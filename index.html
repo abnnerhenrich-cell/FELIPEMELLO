@@ -8,7 +8,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
 
 <link rel="manifest" href="manifest.webmanifest">
-<meta name="theme-color" content="#bfefff">
+
+<meta name="theme-color" content="#00b4d8">
 
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -18,14 +19,14 @@
 <style>
 
 :root{
---bg0:#bfefff;
---bg1:#dff6ff;
---blue:#4fc3ff;
---blue2:#7ad7ff;
---gold:#4fc3ff;
---green:#4fc3ff;
---text:#062033;
---muted:rgba(6,32,51,.65);
+--bg0:#0077b6;
+--bg1:#00b4d8;
+--blue:#90e0ef;
+--blue2:#48cae4;
+--gold:#90e0ef;
+--green:#48cae4;
+--text:#ffffff;
+--muted:rgba(255,255,255,.75);
 }
 
 *{
@@ -36,8 +37,18 @@ body{
 margin:0;
 font-family:"Poppins",sans-serif;
 color:var(--text);
-background:linear-gradient(135deg,#bfefff,#dff6ff,#c9f2ff);
+
+background:
+linear-gradient(
+135deg,
+#0077b6 0%,
+#0096c7 35%,
+#00b4d8 70%,
+#48cae4 100%
+);
+
 min-height:100vh;
+overflow-x:hidden;
 }
 
 .wrap{
@@ -51,16 +62,28 @@ h1{
 font-weight:900;
 font-size:clamp(24px,5vw,44px);
 text-transform:uppercase;
-background:linear-gradient(90deg,#36b9ff,#7ad7ff,#4fc3ff);
+
+background:linear-gradient(
+90deg,
+#ffffff,
+#caf0f8,
+#90e0ef
+);
+
 -webkit-background-clip:text;
 color:transparent;
+
 margin-bottom:10px;
+
+text-shadow:
+0 0 15px rgba(255,255,255,.25);
 }
 
 .sub{
 color:var(--muted);
 font-size:15px;
 margin-bottom:25px;
+font-weight:600;
 }
 
 .tools{
@@ -75,16 +98,22 @@ margin-bottom:25px;
 width:min(650px,100%);
 padding:14px 16px;
 border-radius:999px;
-background:rgba(255,255,255,.55);
-border:1px solid rgba(79,195,255,.35);
+
+background:rgba(255,255,255,.12);
+
+border:1px solid rgba(144,224,239,.35);
+
 backdrop-filter:blur(12px);
+
+box-shadow:
+0 10px 30px rgba(0,180,216,.15);
 }
 
 .search input{
 width:100%;
 border:0;
 background:transparent;
-color:#062033;
+color:white;
 font-weight:700;
 outline:none;
 text-align:center;
@@ -92,94 +121,166 @@ font-size:15px;
 }
 
 .search input::placeholder{
-color:rgba(6,32,51,.45);
+color:rgba(255,255,255,.65);
 }
 
 #count{
 font-weight:700;
-color:#0b4f72;
+color:white;
 }
 
 #lobby{
 display:grid;
 gap:20px;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+grid-template-columns:
+repeat(auto-fit,minmax(220px,1fr));
+
 justify-content:center;
 }
 
-/* CARDS */
+/* ===== CARDS ===== */
 
 .app-card{
+
 border-radius:24px;
+
 padding:22px;
+
 cursor:pointer;
-background:rgba(255,255,255,.55);
-border:1px solid rgba(79,195,255,.35);
-backdrop-filter:blur(12px);
+
+background:rgba(255,255,255,.10);
+
+border:1px solid rgba(144,224,239,.35);
+
+backdrop-filter:blur(14px);
+
 display:flex;
 flex-direction:column;
 align-items:center;
 justify-content:center;
 gap:16px;
+
 transition:.25s;
+
 min-height:230px;
-box-shadow:0 10px 30px rgba(79,195,255,.12);
+
+box-shadow:
+0 10px 30px rgba(0,180,216,.25);
+
 }
 
 .app-card:hover{
-transform:translateY(-10px);
-box-shadow:0 20px 50px rgba(79,195,255,.25);
+
+transform:
+translateY(-10px)
+scale(1.02);
+
+box-shadow:
+0 20px 60px rgba(72,202,228,.45);
+
 }
 
 .app-card img{
+
 width:115px;
 height:115px;
+
 border-radius:22px;
+
 object-fit:cover;
-border:3px solid rgba(79,195,255,.25);
+
+border:
+3px solid rgba(255,255,255,.18);
+
+box-shadow:
+0 10px 30px rgba(0,0,0,.18);
+
 }
 
 .app-card span{
+
 font-weight:900;
+
 font-size:15px;
+
 text-transform:uppercase;
-color:#083b58;
+
+color:white;
+
+text-shadow:
+0 0 10px rgba(255,255,255,.25);
+
 }
+
+/* ===== FOOTER ===== */
 
 .foot{
 margin-top:30px;
 font-size:13px;
-color:rgba(6,32,51,.55);
+color:rgba(255,255,255,.65);
+font-weight:600;
 }
 
-/* BOTÃO WHATSAPP */
+/* ===== BOTÃO WHATSAPP ===== */
 
 #promotor-link{
+
 position:fixed;
+
 left:0;
 right:0;
+
 margin:auto;
+
 bottom:20px;
+
 width:max-content;
+
 display:flex;
+
 align-items:center;
+
 justify-content:center;
+
 gap:12px;
+
 padding:16px 28px;
+
 border-radius:999px;
+
 text-decoration:none;
-background:linear-gradient(135deg,#4fc3ff,#7ad7ff);
-color:white;
+
+background:
+linear-gradient(
+135deg,
+#48cae4,
+#90e0ef
+);
+
+color:#003049;
+
 font-weight:900;
+
 font-size:15px;
-box-shadow:0 20px 60px rgba(79,195,255,.35);
+
+box-shadow:
+0 20px 60px rgba(72,202,228,.45);
+
 z-index:999;
+
 transition:.2s;
+
 }
 
 #promotor-link:hover{
-transform:translateY(-6px);
-box-shadow:0 28px 70px rgba(79,195,255,.45);
+
+transform:
+translateY(-6px);
+
+box-shadow:
+0 28px 70px rgba(72,202,228,.6);
+
 }
 
 #promotor-link img{
@@ -187,7 +288,7 @@ width:24px;
 height:24px;
 }
 
-/* MOBILE */
+/* ===== MOBILE ===== */
 
 @media (max-width:768px){
 
@@ -250,10 +351,18 @@ Se precisar de ajuda, chame no WhatsApp.
 <div class="tools">
 
 <div class="search">
-<input id="q" type="search" placeholder="Buscar app...">
+
+<input
+id="q"
+type="search"
+placeholder="Buscar app..."
+>
+
 </div>
 
-<div id="count">0 apps</div>
+<div id="count">
+0 apps
+</div>
 
 </div>
 
@@ -265,10 +374,12 @@ Se precisar de ajuda, chame no WhatsApp.
 
 </div>
 
-<a id="promotor-link"
+<a
+id="promotor-link"
 href="https://wa.me/5514991203677"
 target="_blank"
-rel="noopener noreferrer">
+rel="noopener noreferrer"
+>
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
 
@@ -280,29 +391,77 @@ Chame seu Promotor
 
 const apps = [
 
-{ nome:"ÁGUIA", img:"https://ugc.production.linktr.ee/aec4543c-8b8c-419f-bcd6-3d6ccd68fcf2_image.png", url:"https://app.aguiaoficial.com/pr/Gw91CpU0" },
+{
+nome:"ÁGUIA",
+img:"https://ugc.production.linktr.ee/aec4543c-8b8c-419f-bcd6-3d6ccd68fcf2_image.png",
+url:"https://app.aguiaoficial.com/pr/Gw91CpU0"
+},
 
-{ nome:"FEITICEIRA", img:"https://i.imgur.com/yuRtyY4.png", url:"https://app.feiticeira.club/pr/6jkoxPSE" },
+{
+nome:"FEITICEIRA",
+img:"https://i.imgur.com/yuRtyY4.png",
+url:"https://app.feiticeira.club/pr/6jkoxPSE"
+},
 
-{ nome:"ACERTOS CLUB", img:"https://ugc.production.linktr.ee/9c03d1f1-4005-42f1-a8e3-aec992cda73b_image.png", url:"https://app.acertos.club/pr/D3GVU06m" },
+{
+nome:"ACERTOS CLUB",
+img:"https://ugc.production.linktr.ee/9c03d1f1-4005-42f1-a8e3-aec992cda73b_image.png",
+url:"https://app.acertos.club/pr/D3GVU06m"
+},
 
-{ nome:"BANCA CERTA", img:"https://ugc.production.linktr.ee/5eedc95b-8974-447c-b595-b9a34393b7e8_image.png", url:"https://app.bancacerta.com/login/register?code=962942" },
+{
+nome:"BANCA CERTA",
+img:"https://ugc.production.linktr.ee/5eedc95b-8974-447c-b595-b9a34393b7e8_image.png",
+url:"https://app.bancacerta.com/login/register?code=962942"
+},
 
-{ nome:"SORTE SETE SETE (BARÃO)", img:"https://i.ibb.co/8L2YXgqP/Whats-App-Image-2025-10-13-at-09-30-36.jpg", url:"https://app.sortesete77.com?p=D4TsDAQ8" },
+{
+nome:"SORTE SETE SETE (BARÃO)",
+img:"https://i.imgur.com/5dyLOhQ.png",
+url:"https://app.sortesete77.com?p=D4TsDAQ8"
+},
 
-{ nome:"SORTE SETE SETE (TRIVO)", img:"https://i.ibb.co/8L2YXgqP/Whats-App-Image-2025-10-13-at-09-30-36.jpg", url:"https://app.sortebetjb.com/pr/ZjIBGbL5" },
+{
+nome:"SORTE SETE SETE (TRIVO)",
+img:"https://i.imgur.com/5dyLOhQ.png",
+url:"https://app.sortebetjb.com/pr/ZjIBGbL5"
+},
 
-{ nome:"LOTERIA PARA TODOS 9.000", img:"https://i.ibb.co/Gf272658/9x1.jpg", url:"https://paratodosbrasil.vip/convite/6ANFG" },
+{
+nome:"LOTERIA PARA TODOS 9.000",
+img:"https://i.ibb.co/Gf272658/9x1.jpg",
+url:"https://paratodosbrasil.vip/convite/6ANFG"
+},
 
-{ nome:"BICHO MASTER", img:"https://i.imgur.com/e2hrATw.png", url:"https://bichomaster.com/cadastro?vendedor=49" },
+{
+nome:"BICHO MASTER",
+img:"https://i.imgur.com/e2hrATw.png",
+url:"https://bichomaster.com/cadastro?vendedor=49"
+},
 
-{ nome:"PÉ QUENTE (LBR 5000)", img:"https://i.imgur.com/izOilFK.png", url:"https://pequente.jbpixbet.com?c=f650fcfb697d607b7b5ae6df3ded27bb46c0" },
+{
+nome:"PÉ QUENTE (LBR 5000)",
+img:"https://i.imgur.com/izOilFK.png",
+url:"https://pequente.jbpixbet.com?c=f650fcfb697d607b7b5ae6df3ded27bb46c0"
+},
 
-{ nome:"APOSTAS ESPORTIVAS ÁGUIA", img:"https://ugc.production.linktr.ee/c04c4ce7-31d9-4ccd-9508-2d26e840c254_image.png", url:"https://www.aguiaoficial.bet/?affiliate=felipe2pix" },
+{
+nome:"APOSTAS ESPORTIVAS ÁGUIA",
+img:"https://ugc.production.linktr.ee/c04c4ce7-31d9-4ccd-9508-2d26e840c254_image.png",
+url:"https://www.aguiaoficial.bet/?affiliate=felipe2pix"
+},
 
-{ nome:"AA888 (TIGRINHO)", img:"https://i.imgur.com/kpB4Awv.jpeg", url:"https://aa888.uk/?a=v5n9lod6" },
+{
+nome:"AA888 (TIGRINHO)",
+img:"https://i.imgur.com/kpB4Awv.jpeg",
+url:"https://aa888.uk/?a=v5n9lod6"
+},
 
-{ nome:"PALPITEIRO", img:"https://i.imgur.com/KoGMPef.jpeg", url:"https://palpiteiro-nu.vercel.app/" },
+{
+nome:"PALPITEIRO",
+img:"https://i.imgur.com/KoGMPef.jpeg",
+url:"https://palpiteiro-nu.vercel.app/"
+}
 
 ];
 
@@ -325,7 +484,9 @@ card.innerHTML = `
 <span>${app.nome}</span>
 `;
 
-card.onclick = ()=>window.open(app.url,"_blank");
+card.onclick = ()=>{
+window.open(app.url,"_blank");
+};
 
 lobby.appendChild(card);
 
@@ -342,12 +503,15 @@ q.addEventListener("input",()=>{
 const term = q.value.toLowerCase();
 
 render(
-apps.filter(a=>a.nome.toLowerCase().includes(term))
+apps.filter(a=>
+a.nome.toLowerCase().includes(term)
+)
 );
 
 });
 
-document.getElementById("year").textContent = new Date().getFullYear();
+document.getElementById("year").textContent =
+new Date().getFullYear();
 
 </script>
 
