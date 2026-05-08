@@ -1,10 +1,10 @@
 {
-  "name": "APPS KELLY MENEZES",
-  "short_name": "KELLY MENEZES",
+  "name": "APPS FELIPE MELLO",
+  "short_name": "FELIPE MELLO",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
-  "background_color": "#070a12",
+  "background_color": "#0077b6",
   "theme_color": "#90e0ef",
   "icons": [
     { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
